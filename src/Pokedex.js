@@ -4,7 +4,7 @@ import './Pokedex.css';
 
 // NOTE: variable names that can obviously be plural or singular are better (i.e. pokes or pokemonCharacters better than PokeMon)
 
-function Pokedex({ numCards, pokes }){
+function Pokedex({ pokes }){
   return (
     <div>
       <h1>Pokedex</h1>
@@ -14,6 +14,8 @@ function Pokedex({ numCards, pokes }){
     </div>
   );
 }
+
+
 
 Pokedex.defaultProps = {
   pokes: [
