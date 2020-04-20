@@ -1,21 +1,26 @@
 import React from 'react';
-import Pokecard from './Pokecard';
-import './Pokedex.css';
+import Pokedex from './Pokedex';
+import './Pokegame.css';
 
 // NOTE: variable names that can obviously be plural or singular are better (i.e. pokes or pokemonCharacters better than PokeMon)
 
-function Pokedex({ numCards, pokes }){
+function Pokegame() {
   return (
     <div>
-      <h1>Pokedex</h1>
-      <div className="Pokedex-card-space">{pokes.map(p => 
-        <Pokecard id={p.id} name={p.name} type={p.type} base_experience={p.base_experience}/>)}
+      <div>
+        <h1>Deck 1</h1>
+        <Pokedex numCards={4}/>
+      </div>
+      <div>
+        <h1>Deck 2</h1>
+        <Pokedex numCards={4}/>
       </div>
     </div>
   );
 }
 
-Pokedex.defaultProps = {
+
+Pokegame.defaultProps = {
   pokes: [
     {id: 4,   name: 'Charmander', type: 'fire',     base_experience: 62},
     {id: 7,   name: 'Squirtle',   type: 'water',    base_experience: 63},
@@ -28,4 +33,4 @@ Pokedex.defaultProps = {
   ]
 }
 
-export default Pokedex;
+export default Pokegame;
