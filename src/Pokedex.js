@@ -1,11 +1,14 @@
 import React from 'react';
 import Pokecard from './Pokecard';
+import './Pokedex.css';
 
-function Pokedex({ pokeMon }){
+// names that can obv be plural or singular better
+// create the css file to link to Pokedex in case you one day need it
+function Pokedex({ pokes }){
   return (
     <div>
       <h1>Pokedex</h1>
-      <div>{pokeMon.map(p => 
+      <div className="Pokedex-card-space">{pokes.map(p => 
         <Pokecard id={p.id} name={p.name} type={p.type} base_experience={p.base_experience}/>)}
       </div>
     </div>
@@ -13,7 +16,7 @@ function Pokedex({ pokeMon }){
 }
 
 Pokedex.defaultProps = {
-  pokeMon: [
+  pokes: [
     {id: 4,   name: 'Charmander', type: 'fire',     base_experience: 62},
     {id: 7,   name: 'Squirtle',   type: 'water',    base_experience: 63},
     {id: 11,  name: 'Metapod',    type: 'bug',      base_experience: 72},
